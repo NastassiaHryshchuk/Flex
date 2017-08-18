@@ -1,0 +1,149 @@
+// ===============
+// Gallery Block
+// ===============
+
+.gallery {
+    background-color: $primary-light;
+}
+
+.gallery .grid li {
+    padding: 20px;
+    height: 350px;
+    background-clip: content-box;
+    background-size: cover;
+    background-position: center;
+    background-color: $primary-dark;
+
+    &:nth-of-type(1) {
+        background-image: url(../img/stefan-stefancik-105376.jpg);
+    }
+
+    &:nth-of-type(2) {
+        background-image: url(../img/jaclyn-clark-115838.jpg);
+    }
+
+    &:nth-of-type(3) {
+        background-image: url(../img/matt-lewis-332180.jpg);
+    }
+
+    &:nth-of-type(4) {
+        background-image: url(../img/david-marcu-114194.jpg);
+    }
+}
+
+.gallery .grid li.small {
+    flex-basis: 40%;
+}
+
+.gallery .grid li.large {
+    flex-basis: 60%;
+}
+
+@media (max-width: 1000px) {
+    .gallery .grid li.small,
+    .gallery .grid li.large {
+        flex-basis: 100%;
+    }
+}
+
+// ===============
+// Features Block
+// ===============
+
+.features {
+    background: $primary-mid;
+
+    h4 {
+        font-size: $h4;
+        color: $primary-dark;
+        margin-bottom: 25px;
+    }
+}
+
+.features .grid li {
+    padding: 0 30px;
+    flex-basis: 33%;
+    text-align: center;
+
+    i {
+       font-size: 50px;
+       color: $accent;
+       margin-bottom: 25px;
+    }
+
+    p {
+        margin: 0;
+    }
+}
+
+@media (max-width: 1000px) {
+    .features .grid li {
+        flex-basis: 70%;
+        margin-bottom: 65px;
+    }
+
+    .features .grid li:last-child {
+        margin-bottom: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .features .grid li {
+        flex-basis: 100%;
+    }
+}
+
+// ===============
+// Reviews Block
+// ===============
+
+.reviews {
+    background-color: $primary-light;
+
+    .quote {
+        width: 80%;
+        text-align: center;
+        font-size: $quote;
+        line-height: 1.5;
+        margin-bottom: 20px;
+        padding: 0;
+    }
+
+    .author {
+        margin-bottom: 50px;
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+// ===============
+// Contact-form Block
+// ===============
+.contact {
+    background-color: $primary-mid;
+
+    form {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        width: 80%;
+        max-width: 800px;
+    }
+
+    input {
+        padding: 19px;
+        flex: 1;
+        margin-right: 30px;
+        font-size: $p;
+        color: $primary-dark;
+    }
+}
+
+@media (max-width: 800px) {
+    .contact form input {
+        flex-basis: 100%;
+        margin: 0 0 20px 0;
+    }
+}

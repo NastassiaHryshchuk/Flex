@@ -1,0 +1,150 @@
+// =======================================
+// Full Navigation, including mobile menu
+// =======================================
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    padding: 35px 100px 0;
+
+    nav {
+        display: flex;
+    	justify-content: space-between;
+    	align-items: center;
+    }
+
+    .logo {
+        display: inline-block;
+        font-size: $h2;
+        color: $text-light;
+        opacity: 0.7;
+    }
+
+    ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: space-between;
+        width: 40%;
+
+        a {
+            color: $text-light;
+            opacity: 0.7;
+            transition: all 0.5s ease;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+
+    li {
+        display: inline-block;
+    }
+
+    #menu-toggle {
+        display: none;
+    }
+
+    .label-toggle {
+        display: none;
+    }
+
+    @media screen and (max-width: 1000px) {
+        header {
+            padding: 20px 50px;
+        }
+
+        nav {
+            flex-direction: column;
+        }
+
+        .logo {
+            margin-bottom: 15px;
+        }
+
+        ul {
+            width: 60%;
+        }
+    }
+
+    @media screen and (max-width: 700px) {
+        ul {
+            background-color: $primary-dark;
+            display: block;
+            margin-top: 10px;
+            height: 0;
+            list-style-type: none;
+            opacity: 0;
+            text-align: center;
+            width: 100%;
+            visibility: hidden;
+            transition: all 1s ease;
+        }
+
+        li {
+            border-bottom: 2px solid $accent;
+            display: block;
+            font-size: $p;
+            padding: 24px 0;
+            transition: all 1s ease;
+            &:hover {
+                background-color: #000000;
+            }
+        }
+
+        #menu-toggle:checked ~ ul {
+            opacity: 1;
+            height: 274px;
+            visibility: visible;
+        }
+
+        .label-toggle {
+            background: linear-gradient(to bottom, $primary-light 0%, $primary-light 20%, transparent 20%, transparent 40%, $primary-light 40%, $primary-light 60%, transparent 60%, transparent 80%, $primary-light 80%, $primary-light 100%); //Gradient Hamburger
+            cursor: pointer;
+            display: block;
+            float: right;
+            height: 30px;
+            width: 30px;
+        }
+
+        .header-navigation {
+            display: block;
+        }
+    }
+}
+
+.header-content {
+    position: relative;
+    justify-content: center;
+    min-height: 100vh;
+	text-align: center;
+
+    .background-image {
+        background-color: $accent;
+        background-image: url("../img/james-donovan-180375.jpg");
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-size: cover;
+        z-index: -1;
+    }
+}
+
+.header-content {
+    color: $text-light;
+
+    h1 {
+        font-size: $h1;
+        margin-bottom: 15px;
+    }
+
+    h3 {
+        font-size: $h3;
+        margin-bottom: 40px;
+    }
+}
